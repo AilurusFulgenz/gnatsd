@@ -1713,6 +1713,16 @@ func MergeOptions(fileOpts, flagOpts *Options) *Options {
 	if flagOpts.RoutesStr != "" {
 		mergeRoutes(&opts, flagOpts)
 	}
+	if flagOpts.CheckConfig {
+		opts.CheckConfig = true
+	}
+	if flagOpts.ConfigKey != "" {
+		opts.ConfigKey = flagOpts.ConfigKey
+	}
+	if flagOpts.ConfigSigFile != "" {
+		opts.ConfigSigFile = flagOpts.ConfigSigFile
+	}
+
 	return &opts
 }
 
